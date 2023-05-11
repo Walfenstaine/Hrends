@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Interface : MonoBehaviour
 {
     public MeshCollider greed;
-    public StiveManager sm;
     public Data data;
     public Text coins;
     public bool ded;
@@ -74,7 +73,6 @@ public class Interface : MonoBehaviour
         greed.enabled = false;
         if (!ded)
         {
-            sm.Winer();
             gamover.SetActive(false);
             tools.SetActive(false);
             andLevel.SetActive(true);
