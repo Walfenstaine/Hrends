@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 326dc423f5e0cfa4aa985cdd580b1a69
+guid: 7155a85f8a1ba9a498d198421ee149e4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Frend
-    second: {fileID: 2100000, guid: 2d8c66d2666bad042b337c6cdd4132c4, type: 2}
+    second: {fileID: 2100000, guid: 2b1a19a5a3198714781cd7b99d54f2ca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2.5
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -75,7 +75,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
@@ -94,7 +94,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.024999999
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

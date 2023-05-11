@@ -3,15 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Grund
+  - Enemy
+  - Block
+  - Pnel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grund
   - Water
   - UI
-  - 
+  - Block
   - 
   - 
   - 

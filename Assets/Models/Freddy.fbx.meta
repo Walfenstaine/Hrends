@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 509dbd499994ce84e80261364fa822ba
+guid: b482fb02d0870f141adf0020cf28fc69
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B"
-    second: {fileID: 2100000, guid: 5c5c1f4e06fdb544bb2c06c9451ca57d, type: 2}
+    second: {fileID: 2100000, guid: a79b6abf8dd076844babc5de2b0ead98, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -47,8 +47,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -75,7 +75,7 @@ ModelImporter:
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
