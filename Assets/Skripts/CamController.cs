@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
-    public Interface iF;
-    public Transform player;
+    public CharacterController player;
     void Update()
     {
         if (player != null)
         {
-            transform.position = Vector3.Lerp(transform.position, player.position, 10.5f * Time.deltaTime);
-        }
-        else {
-            //iF.Ded();
+            transform.position = Vector3.Lerp(transform.position, player.transform.position+player.velocity, 10.5f * Time.deltaTime);
         }
     }
 }
