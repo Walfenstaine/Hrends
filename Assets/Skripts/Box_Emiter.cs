@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Box_Emiter : MonoBehaviour
 {
+    public AudioClip clip;
     public Animator anim;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
+            SoundPlayer.regit.sorse.PlayOneShot(clip);
             anim.SetBool("Close", true);
         }
     }
@@ -17,6 +19,7 @@ public class Box_Emiter : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            SoundPlayer.regit.sorse.PlayOneShot(clip);
             anim.SetBool("Close", false);
         }
     }
