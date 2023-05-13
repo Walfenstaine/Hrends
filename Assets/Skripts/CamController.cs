@@ -9,7 +9,7 @@ public class CamController : MonoBehaviour
     {
         if (player != null)
         {
-            transform.position = Vector3.Lerp(transform.position, player.transform.position+player.velocity, 10.5f * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, player.transform.position+player.velocity,2.0f * Time.deltaTime);
         }
     }
 }
