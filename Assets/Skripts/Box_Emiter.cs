@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door_MRom : MonoBehaviour
+public class Box_Emiter : MonoBehaviour
 {
-    public bool activate;
     public Animator anim;
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && activate) {
-            anim.SetBool("Open", true);
+        if (other.tag == "Player")
+        {
+            anim.SetBool("Close", true);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player" && activate)
+        if (other.tag == "Player")
         {
-            anim.SetBool("Open", false);
+            anim.SetBool("Close", false);
         }
     }
 }
+
