@@ -10,7 +10,6 @@ public class ShowInter : MonoBehaviour, IEventReceiver<ShowInterAds>
 {
     public AudioSource sorse;
     public Data data;
-    private float scale = 1;
     
     void Start()
     {
@@ -51,15 +50,12 @@ public class ShowInter : MonoBehaviour, IEventReceiver<ShowInterAds>
     {
         if (state == InterstitialState.Closed)
         {
-            Time.timeScale = scale;
             sorse.mute = !data.soundOn;
         }
 
 
         if (state == InterstitialState.Opened)
         {
-            scale = Time.timeScale;
-            Time.timeScale = 0;
             sorse.mute = true;
         }
     }

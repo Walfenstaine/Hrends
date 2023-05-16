@@ -7,6 +7,7 @@ public class DoorExit : MonoBehaviour
     [SerializeField] private Language language;
     public AudioClip clip;
     public bool activate;
+    public Interface iF;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,7 +15,7 @@ public class DoorExit : MonoBehaviour
         {
             if (activate)
             {
-                Debug.Log("Exit");
+                iF.AndLevel();
             }
             else
             {

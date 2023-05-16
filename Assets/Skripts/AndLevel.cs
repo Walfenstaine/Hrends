@@ -17,18 +17,6 @@ public class AndLevel : MonoBehaviour
     public void And()
     {
         data.record += 1;
-
-        if (data.coins < lvlnum * 130)
-        {
-            data.coins += (lvlnum * 130) - data.coins;
-        }
-        else
-        {
-            data.coins += 100;
-        }
-        
-
-
         if (lvlnum >= data.lvlNumber)
         {
             data.lvlNumber += 1;
