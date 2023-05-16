@@ -17,7 +17,7 @@ public class AndLevel : MonoBehaviour
     public void And()
     {
         data.record += 1;
-        if (lvlnum >= data.lvlNumber)
+        if (lvlnum > data.lvlNumber)
         {
             data.lvlNumber += 1;
         }

@@ -10,12 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
-  m_Name: I ran out of coins
+  m_Name: Record
   m_EditorClassIdentifier: 
-  <en>k__BackingField: 'I ran
-
-    out of coins!
-
-    What will you do?'
-  <ru>k__BackingField: "\u041A\u043E\u043D\u0447\u0438\u043B\u0438\u0441\u044C\n\u043C\u043E\u043D\u0435\u0442\u043A\u0438!\n\u041A\u0430\u043A
-    \u043F\u043E\u0441\u0442\u0443\u043F\u0438\u0448\u044C?"
+  <en>k__BackingField: Record
+  <ru>k__BackingField: "\u0420\u0435\u043A\u043E\u0440\u0434"

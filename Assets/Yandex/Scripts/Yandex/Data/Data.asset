@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Data
   m_EditorClassIdentifier: 
   num: 0
-  record: 6
-  coins: 725
+  record: 0
+  coins: 25
   cena: 5
-  lvlNumber: 7
+  lvlNumber: 1
   soundOn: 1

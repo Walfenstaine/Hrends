@@ -13,7 +13,6 @@ public class Reward : MonoBehaviour
 
     private bool isRewarded;
 
-    private float scale = 1;
 
     void OnEnable()
     {
@@ -40,8 +39,6 @@ public class Reward : MonoBehaviour
         if (state == RewardedState.Opened)
         {
             isRewarded = false;
-            scale = Time.timeScale;
-            Time.timeScale = 0;
             sorse.mute = true;
 
         }
@@ -53,7 +50,6 @@ public class Reward : MonoBehaviour
 
         if (state == RewardedState.Closed)
         {
-            Time.timeScale = scale;
             sorse.mute = !data.soundOn;
 
             if (isRewarded)
