@@ -13,7 +13,14 @@ public class EnemiAI : MonoBehaviour {
     private float timer = 0;
 
 
-    void Update () {
+
+
+
+
+    void Update () 
+    {
+        
+        
         anim.SetFloat ("Speed", agent.velocity.magnitude/speed);
         if (timer > 0)
         {
@@ -45,4 +52,6 @@ public class EnemiAI : MonoBehaviour {
         agent.speed = speed;
         agent.destination = target[num].position;
     }
+
+
 }
