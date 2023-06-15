@@ -7,7 +7,7 @@ public class FOVArea : MonoBehaviour
     [SerializeField] private float distance = 30f;
     [SerializeField] private float angleBound = 30f;
     [SerializeField] private int  pointsResolution = 8;
-
+    public Sprite skrimer;
 
     private float radiansAngleBound;
 
@@ -55,6 +55,11 @@ public class FOVArea : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hit, distance))
         {
+            if (hit.collider.tag == "Player")
+            {
+                Interface.rid.skrimer.sprite = skrimer;
+                Interface.rid.Gamover();
+            }
             //Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection)*hit.distance, Color.yellow);
             return rayDirection*hit.distance;
         }

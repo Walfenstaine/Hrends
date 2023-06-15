@@ -5,17 +5,36 @@ using UnityEngine.UI;
 
 public class Interface : MonoBehaviour
 {
+    public AudioClip skrim;
     public Data data;
-   // public Text coins;
+    // public Text coins;
+    public Image skrimer;
     public GameObject gamover,andLevel, game, menue;
-
-    private void Start()
+    public static Interface rid { get; set; }
+    void Awake()
     {
         Menue();
+        if (rid == null)
+        {
+            rid = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
+    void OnDestroy()
+    {
+        rid = null;
+    }
+
     public void Gamover()
     {
-        Time.timeScale = 0;
+        if (Time.timeScale > 0)
+        {
+            SoundPlayer.regit.sorse.PlayOneShot(skrim);
+            Time.timeScale = 0;
+        }
         gamover.SetActive(true);
         game.SetActive(false);
         andLevel.SetActive(false);
