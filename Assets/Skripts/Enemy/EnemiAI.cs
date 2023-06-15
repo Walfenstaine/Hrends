@@ -13,8 +13,37 @@ public class EnemiAI : MonoBehaviour {
     private float timer = 0;
 
 
+    void OnEnable()
+    {
+        Events.OnDie += Die;
+    }
+
+    void OnDisable()
+    {
+        Events.OnDie -= Die;
+    }
+
+    void Die()
+    {
+        agent.isStopped = true;
+        agent.Warp(WarpPoint());
+        //print("warp");
+        agent.isStopped = false;
+    }
 
 
+    Vector3 WarpPoint()
+    {
+        Vector3 warpPoinTemp = target[0].position;
+        for(int i = 1; i < target.Length; i++)
+        {
+            if(Vector3.Distance(warpPoinTemp, Muwer.regit.myTransform.position) < Vector3.Distance(target[i].position, Muwer.regit.myTransform.position))
+            {
+                warpPoinTemp = target[i].position;
+            }
+        }
+        return warpPoinTemp;
+    }
 
 
     void Update () 

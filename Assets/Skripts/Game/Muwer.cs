@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Muwer : MonoBehaviour {
+
+    [HideInInspector] public Transform myTransform;
     public Animator anim;
     public Transform bodey;
 	public Vector3 muve;
@@ -11,6 +13,7 @@ public class Muwer : MonoBehaviour {
 	private Vector3 moveDirection = Vector3.zero;
 	private CharacterController controller;
     public static Muwer regit { get; set; }
+
 
     void Awake()
     {
@@ -28,9 +31,11 @@ public class Muwer : MonoBehaviour {
         regit = null;
     }
 
-    void Start () {
+    void Start () 
+    {
 		controller = GetComponent<CharacterController>();
-	}
+        myTransform = transform;
+    }
 
 	void Update() {
 		if (controller.isGrounded) {
