@@ -17,13 +17,19 @@ public class FOVArea : MonoBehaviour
     {
         radiansAngleBound = angleBound * Mathf.Deg2Rad;
         meshFilter = GetComponent<MeshFilter>();
-        CreateFOVArea();
+        StartCoroutine(Check());
     }
 
-    void Update()
+
+    IEnumerator Check()
     {
-        CreateFOVArea();
+        while (true)
+        {
+            CreateFOVArea();
+            yield return new WaitForSeconds(.18f);
+        }
     }
+
 
     void CreateFOVArea()
     {

@@ -37,13 +37,15 @@ public class EnemiAI : MonoBehaviour {
         Vector3 warpPoinTemp = target[0].position;
         for(int i = 1; i < target.Length; i++)
         {
-            if(Vector3.Distance(warpPoinTemp, Muwer.regit.myTransform.position) < Vector3.Distance(target[i].position, Muwer.regit.myTransform.position))
+            float delta = (warpPoinTemp - Muwer.regit.myTransform.position).sqrMagnitude;
+            if (delta < (target[i].position - Muwer.regit.myTransform.position).sqrMagnitude)
             {
                 warpPoinTemp = target[i].position;
             }
         }
         return warpPoinTemp;
     }
+
 
 
     void Update () 
