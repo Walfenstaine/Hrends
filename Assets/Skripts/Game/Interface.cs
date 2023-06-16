@@ -27,10 +27,13 @@ public class Interface : MonoBehaviour
     {
         rid = null;
     }
-
-    public void Gamover()
+    public void Rspune()
     {
         Events.OnDie?.Invoke();
+        Game();
+    }
+    public void Gamover()
+    {
         if (Time.timeScale > 0)
         {
             SoundPlayer.regit.sorse.PlayOneShot(skrim);

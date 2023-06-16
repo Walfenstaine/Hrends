@@ -12,15 +12,17 @@ public class Box_Emiter : MonoBehaviour
         {
             SoundPlayer.regit.sorse.PlayOneShot(clip);
             anim.SetBool("Close", true);
+            other.tag = "Block";
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Block")
         {
             SoundPlayer.regit.sorse.PlayOneShot(clip);
             anim.SetBool("Close", false);
+            other.tag = "Player";
         }
     }
 }

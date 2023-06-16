@@ -134,7 +134,7 @@ PrefabInstance:
     - target: {fileID: 8106586246186456332, guid: ffeddb582dd7a3443a5ba7511b0c64a9, type: 3}
       propertyPath: skrimer
       value: 
-      objectReference: {fileID: 21300000, guid: 70853160b183f1b46996157f63f8eeda, type: 3}
+      objectReference: {fileID: 21300000, guid: c576880a7ed35204b9deae95ed951af5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

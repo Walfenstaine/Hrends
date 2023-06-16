@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3932774186009013490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3635867405013417680}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: Game
+        m_MethodName: Rspune
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1059,7 +1059,7 @@ RectTransform:
   - {fileID: 9119349975908989351}
   - {fileID: 220394835474600776}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde7fd220a44a714094b55b5d3a308ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skrim: {fileID: 0}
+  skrim: {fileID: 8300000, guid: 664a3738c7936534fa866482d55dda3d, type: 3}
   data: {fileID: 11400000, guid: 2d24e1bdce643a543a1915e38c2dd049, type: 2}
   skrimer: {fileID: 7188210279506249544}
   gamover: {fileID: 8697565645910270580}
@@ -3768,7 +3768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3407906335677053526
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3862,7 +3862,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4629927376144707185
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4207,7 +4207,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 905c4184b322a7547966a0a2aa4424a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
