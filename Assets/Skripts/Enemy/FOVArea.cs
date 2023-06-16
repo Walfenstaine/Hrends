@@ -63,7 +63,7 @@ public class FOVArea : MonoBehaviour
         {
             if (hit.collider.tag == "Player")
             {
-                Interface.rid.skrimer.sprite = skrimer;
+                Interface.rid.skrimer = skrimer;
                 Interface.rid.Gamover();
             }
             //Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection)*hit.distance, Color.yellow);

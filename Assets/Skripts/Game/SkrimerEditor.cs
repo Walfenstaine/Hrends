@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SkrimerEditor : MonoBehaviour
 {
-    public Rade rade;
     public Image image;
 
     private void OnEnable()
     {
-        image.sprite = rade.skrimer;
+        image.sprite = Interface.rid.skrimer;
     }
 }

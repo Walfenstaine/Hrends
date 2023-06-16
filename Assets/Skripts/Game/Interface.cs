@@ -8,7 +8,8 @@ public class Interface : MonoBehaviour
     public AudioClip skrim;
     public Data data;
     // public Text coins;
-    public Image skrimer;
+   [HideInInspector] public Sprite skrimer;
+
     public GameObject gamover,andLevel, game, menue;
     public static Interface rid { get; set; }
     void Awake()
