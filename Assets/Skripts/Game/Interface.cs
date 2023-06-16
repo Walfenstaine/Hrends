@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Interface : MonoBehaviour
 {
-    public AudioClip skrim;
+    public AudioClip skrim, winer;
     public Data data;
     // public Text coins;
    [HideInInspector] public Sprite skrimer;
@@ -62,7 +62,11 @@ public class Interface : MonoBehaviour
     }
     public void AndLevel()
     {
-        Time.timeScale = 0;
+        if (Time.timeScale > 0)
+        {
+            SoundPlayer.regit.sorse.PlayOneShot(winer);
+            Time.timeScale = 0;
+        }
         gamover.SetActive(false);
         game.SetActive(false);
         andLevel.SetActive(true);

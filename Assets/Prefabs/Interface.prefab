@@ -1142,8 +1142,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skrim: {fileID: 8300000, guid: 664a3738c7936534fa866482d55dda3d, type: 3}
+  winer: {fileID: 8300000, guid: 856fe208a05e8ef4581beda92379b65c, type: 3}
   data: {fileID: 11400000, guid: 2d24e1bdce643a543a1915e38c2dd049, type: 2}
-  skrimer: {fileID: 7188210279506249544}
+  skrimer: {fileID: 0}
   gamover: {fileID: 8697565645910270580}
   andLevel: {fileID: 4200492005398571257}
   game: {fileID: 291128679283848715}
@@ -3843,7 +3844,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa1266c70cb96845aaf1a5fd9b7ccd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rade: {fileID: 11400000, guid: b424ddae56ed4154f8e41541a23692f6, type: 2}
   image: {fileID: 7188210279506249544}
 --- !u!1 &8774287644987629850
 GameObject:
