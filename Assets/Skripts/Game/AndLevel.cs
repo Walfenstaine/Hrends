@@ -18,6 +18,10 @@ public class AndLevel : MonoBehaviour
     {
         data.record += 1;
         data.lvlNumber = lvl;
+        if(data.maxLvlNumber < lvl)
+        {
+            data.maxLvlNumber = lvl;
+        }
 
         SaveAndLoad.Instance.Save();
 

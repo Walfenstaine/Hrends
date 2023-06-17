@@ -5,5 +5,6 @@ public class Data: ScriptableObject
 {
     public int record;
     public int lvlNumber;
+    public int maxLvlNumber;
     public bool soundOn;
 }

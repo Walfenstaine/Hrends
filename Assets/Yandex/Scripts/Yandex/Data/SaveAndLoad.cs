@@ -17,6 +17,8 @@ public class SaveAndLoad : MonoBehaviour
 {
     public static SaveAndLoad Instance { get; private set; }
 
+    public bool isFirstLoad;
+    
     [SerializeField] private Data myData;
     [SerializeField] private string id;
 
@@ -71,6 +73,7 @@ public class SaveAndLoad : MonoBehaviour
         myData.record = 0;
 
         myData.lvlNumber = 1;
+        myData.maxLvlNumber = 1;
         myData.soundOn = true;
     }
 
@@ -83,6 +86,7 @@ public class SaveAndLoad : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         time = Time.unscaledTime - 30f;
         record = 0;
+        isFirstLoad = true;
     }
 
     private void OnGetCompleted(bool success, string data)

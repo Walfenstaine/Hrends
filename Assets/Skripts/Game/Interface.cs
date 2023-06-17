@@ -24,10 +24,24 @@ public class Interface : MonoBehaviour
             Destroy(this);
         }
     }
+
+    void Start()
+    {
+        if(!SaveAndLoad.Instance.isFirstLoad)
+        {
+            SaveAndLoad.Instance.isFirstLoad = true;
+            Game();
+        }
+    }
+
+
+
     void OnDestroy()
     {
         rid = null;
     }
+
+
     public void Rspune()
     {
         Events.OnDie?.Invoke();
@@ -44,6 +58,9 @@ public class Interface : MonoBehaviour
         game.SetActive(false);
         andLevel.SetActive(false);
     }
+
+
+
     public void Game()
     {
         Time.timeScale = 1;
@@ -71,8 +88,5 @@ public class Interface : MonoBehaviour
         game.SetActive(false);
         andLevel.SetActive(true);
     }
-    void Update()
-    {
-        //coins.text = "" + data.coins;
-    }
+
 }
