@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6697575469874094255}
-  - component: {fileID: 1551233682095121925}
+  - component: {fileID: 4579511675434024975}
   m_Layer: 5
   m_Name: MobInput
   m_TagString: Untagged
@@ -159,7 +159,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1551233682095121925
+--- !u!114 &4579511675434024975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1059,7 +1059,7 @@ RectTransform:
   - {fileID: 9119349975908989351}
   - {fileID: 220394835474600776}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1288,7 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlnum: 1
-  lvl: Scene1
+  lvl: 0
   data: {fileID: 11400000, guid: 2d24e1bdce643a543a1915e38c2dd049, type: 2}
 --- !u!1 &2193394235123135363
 GameObject:

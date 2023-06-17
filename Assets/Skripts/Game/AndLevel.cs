@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class AndLevel : MonoBehaviour
 {
     public int lvlnum;
-    public string lvl;
+    public int lvl;
     public Data data;
 
     public void Restart()
@@ -17,10 +17,7 @@ public class AndLevel : MonoBehaviour
     public void And()
     {
         data.record += 1;
-        if (lvlnum > data.lvlNumber)
-        {
-            data.lvlNumber += 1;
-        }
+        data.lvlNumber = lvl;
 
         SaveAndLoad.Instance.Save();
 

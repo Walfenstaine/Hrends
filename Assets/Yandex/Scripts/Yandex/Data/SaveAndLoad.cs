@@ -68,10 +68,7 @@ public class SaveAndLoad : MonoBehaviour
 
     void SetInitValue()
     {
-        myData.num = 0;
         myData.record = 0;
-        myData.coins = 25;
-        myData.cena = 5;
 
         myData.lvlNumber = 1;
         myData.soundOn = true;
