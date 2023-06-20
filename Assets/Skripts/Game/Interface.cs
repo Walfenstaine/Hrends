@@ -10,7 +10,7 @@ public class Interface : MonoBehaviour
     // public Text coins;
    [HideInInspector] public Sprite skrimer;
 
-    public GameObject gamover,andLevel, game, menue;
+    public GameObject gamover,andLevel, game, menue, lvl;
     public static Interface rid { get; set; }
     void Awake()
     {
@@ -68,6 +68,16 @@ public class Interface : MonoBehaviour
         gamover.SetActive(false);
         game.SetActive(true);
         andLevel.SetActive(false);
+        lvl.SetActive(false);
+    }
+    public void LvlSelect()
+    {
+        Time.timeScale = 0;
+        menue.SetActive(false);
+        gamover.SetActive(false);
+        game.SetActive(false);
+        andLevel.SetActive(false);
+        lvl.SetActive(true);
     }
     public void Menue()
     {
@@ -76,6 +86,7 @@ public class Interface : MonoBehaviour
         gamover.SetActive(false);
         game.SetActive(false);
         andLevel.SetActive(false);
+        lvl.SetActive(false);
     }
     public void AndLevel()
     {
@@ -87,6 +98,7 @@ public class Interface : MonoBehaviour
         gamover.SetActive(false);
         game.SetActive(false);
         andLevel.SetActive(true);
+        lvl.SetActive(false);
     }
 
 }
