@@ -146,7 +146,7 @@ PlayerSettings:
   enableFrameTimingStats: 0
   enableOpenGLProfilerGPURecorders: 1
   useHDRDisplay: 0
-  D3DHDRBitDepth: 0
+  hdrBitDepth: 0
   m_ColorGamuts: 00000000
   targetPixelDensity: 30
   resolutionScalingMode: 0
@@ -721,7 +721,7 @@ PlayerSettings:
   webGLTemplate: PROJECT:Bridge
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 1
+  webGLCompressionFormat: 0
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
@@ -738,9 +738,10 @@ PlayerSettings:
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
-  il2cppCodeGeneration: {}
+  il2cppCodeGeneration:
+    WebGL: 1
   managedStrippingLevel:
-    WebGL: 2
+    WebGL: 3
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
   allowUnsafeCode: 0
@@ -837,5 +838,6 @@ PlayerSettings:
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
+  platformRequiresReadableAssets: 0
   virtualTexturingSupportEnabled: 0
   insecureHttpOption: 0

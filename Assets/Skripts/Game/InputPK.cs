@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputPK : MonoBehaviour
 {
-    public Muwer muwer;
+    private Muwer muwer;
 
     private void Start()
     {

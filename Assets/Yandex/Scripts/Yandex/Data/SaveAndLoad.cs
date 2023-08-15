@@ -32,7 +32,7 @@ public class SaveAndLoad : MonoBehaviour
 
     public void Save()
     {
-        if (Time.unscaledTime >= time + 5f)
+        if (Time.unscaledTime >= time + 1f)
         {
             time = Time.unscaledTime;
             string data = JsonUtility.ToJson(myData);

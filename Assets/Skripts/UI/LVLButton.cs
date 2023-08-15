@@ -28,11 +28,12 @@ public class LVLButton : MonoBehaviour
 
     public void LevelSelect()
     {
-
         if (data.lvlNumber != lvlNumber)
         {
             SaveAndLoad.Instance.isFirstLoad = false;
-            SceneManager.LoadScene(lvlNumber);
+            data.lvlNumber = lvlNumber;
+            SaveAndLoad.Instance.Save();
+            SceneManager.LoadScene("Scene" + lvlNumber);
         }
         else
         {

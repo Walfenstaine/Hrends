@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Block
   - Pnel
+  - door
   layers:
   - Default
   - TransparentFX

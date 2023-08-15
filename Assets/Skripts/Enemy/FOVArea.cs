@@ -9,6 +9,8 @@ public class FOVArea : MonoBehaviour
     [SerializeField] private int  pointsResolution = 8;
     public Sprite skrimer;
 
+    private LayerMask layerMask;
+
     private float radiansAngleBound;
 
     private MeshFilter meshFilter;
@@ -17,6 +19,7 @@ public class FOVArea : MonoBehaviour
     {
         radiansAngleBound = angleBound * Mathf.Deg2Rad;
         meshFilter = GetComponent<MeshFilter>();
+        layerMask = ~LayerMask.GetMask("IgnoreRaycast");
         StartCoroutine(Check());
     }
 
@@ -35,14 +38,6 @@ public class FOVArea : MonoBehaviour
     {
         meshFilter.mesh = CreateMesh(FindPoints());
 
-
-
-
-        //TEST
-        //Vector3[] pointsTemp = new Vector3[2];
-        //pointsTemp[0] = distance * new Vector3(0,0,1);
-        //pointsTemp[1] = distance * new Vector3(0.7f, 0, 0.7f); 
-        //meshFilter.mesh = CreateMesh(pointsTemp);
     }
 
     private Vector3[] FindPoints()
@@ -59,19 +54,17 @@ public class FOVArea : MonoBehaviour
     {
         Vector3 rayDirection = new Vector3(Mathf.Sin(angleTemp), 0, Mathf.Cos(angleTemp));
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hit, distance))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(rayDirection), out hit, distance, layerMask))
         {
             if (hit.collider.tag == "Player")
             {
                 Interface.rid.skrimer = skrimer;
                 Interface.rid.Gamover();
             }
-            //Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection)*hit.distance, Color.yellow);
             return rayDirection*hit.distance;
         }
         else
         {
-            //Debug.DrawRay(transform.position, transform.TransformDirection(rayDirection) * distance, Color.yellow);
             return rayDirection*distance;
         }
     }
@@ -89,17 +82,8 @@ public class FOVArea : MonoBehaviour
         for (int i = 1; i< verticesArray.Length; i++)
         {
             verticesArray[i] = pointsTemp[i - 1];
-            //print(pointsTemp[i - 1]);
         }
         meshTemp.vertices = verticesArray;
-
-
-        /*meshTemp.triangles = new int[] {
-            0, 1, 2
-        };*/
-
-
-
 
 
         int[] trianglesArray = new int[3*(pointsTemp.Length - 1)];
@@ -113,7 +97,6 @@ public class FOVArea : MonoBehaviour
             {
                 trianglesArray[i] = i - 2*(i/3);
             }
-            //print(trianglesArray[i] + " ");
         }
         meshTemp.triangles = trianglesArray;
 

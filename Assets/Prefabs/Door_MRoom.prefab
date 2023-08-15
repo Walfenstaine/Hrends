@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b591607698f0809459c740a377b6af95, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b591607698f0809459c740a377b6af95, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,6 +71,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b591607698f0809459c740a377b6af95, type: 3}
       propertyPath: m_Name
       value: Door_MRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b591607698f0809459c740a377b6af95, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b591607698f0809459c740a377b6af95, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3847698481125458707, guid: b591607698f0809459c740a377b6af95, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -153,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12bb2f0945ac6354783f5806b900a766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  language: {fileID: 0}
   open: {fileID: 8300000, guid: 9bf0b82ac476e73429462b255530f5ae, type: 3}
   close: {fileID: 8300000, guid: 27df85f02230fa4468e2c525dc0c0996, type: 3}
   locked: {fileID: 8300000, guid: ad06a9e79f5286f49806b857cf8f01db, type: 3}

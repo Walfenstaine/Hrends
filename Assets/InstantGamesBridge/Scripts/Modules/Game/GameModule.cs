@@ -41,6 +41,11 @@ namespace InstantGamesBridge.Modules.Game
                 visibilityStateChanged?.Invoke(visibilityState);
             }
         }
+
+        private void ResizeFunction()
+        {
+            Events.OnResize?.Invoke();
+        }
     }
 }
 #endif
