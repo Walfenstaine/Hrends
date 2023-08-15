@@ -26,7 +26,7 @@ namespace InstantGamesBridge.Modules.Device
         [DllImport("__Internal")]
         private static extern string InstantGamesBridgeGetDeviceType();
 #else
-        public DeviceType type { get; } = DeviceType.Desktop;
+        public DeviceType type { get; } = DeviceType.Mobile;
 #endif
     }
 }
