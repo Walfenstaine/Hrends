@@ -155,7 +155,7 @@ MonoBehaviour:
   isFirstLoad: 0
   isAds: 0
   myData: {fileID: 11400000, guid: 2d24e1bdce643a543a1915e38c2dd049, type: 2}
-  id: p7
+  id: p8
 --- !u!4 &624962992
 Transform:
   m_ObjectHideFlags: 0
