@@ -18,6 +18,8 @@ public class SaveAndLoad : MonoBehaviour
     public static SaveAndLoad Instance { get; private set; }
 
     public bool isFirstLoad;
+
+    public bool isAds = false;
     
     [SerializeField] private Data myData;
     [SerializeField] private string id;
@@ -27,6 +29,7 @@ public class SaveAndLoad : MonoBehaviour
 
     public void Load()
     {
+        StartCoroutine(AutoShowEnum());
         Bridge.storage.Get(id, OnGetCompleted);
     }
 
@@ -84,7 +87,7 @@ public class SaveAndLoad : MonoBehaviour
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
-        time = Time.unscaledTime - 30f;
+        time = Time.unscaledTime - 1f;
         record = 0;
         isFirstLoad = true;
     }
@@ -104,6 +107,17 @@ public class SaveAndLoad : MonoBehaviour
         {
 
         });
+    }
+
+    private IEnumerator AutoShowEnum()
+    {
+        while (true)
+        {
+            yield return new WaitForSecondsRealtime(80f);
+            if (!isAds) {
+                Events.OnShow?.Invoke();
+            }
+        }
     }
 
 

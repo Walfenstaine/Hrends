@@ -40,6 +40,7 @@ public class Reward : MonoBehaviour
         {
             isRewarded = false;
             sorse.mute = true;
+            SaveAndLoad.Instance.isAds = true;
 
         }
 
@@ -57,6 +58,7 @@ public class Reward : MonoBehaviour
                 isRewarded = false;
                 OnReward.Invoke();
             }
+            SaveAndLoad.Instance.isAds = false;
         }
     }
 }

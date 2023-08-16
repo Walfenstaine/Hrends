@@ -12,7 +12,7 @@ public class VerticalResize : MonoBehaviour
 
     private void Resize()
     {
-        scale = normalize * (Screen.height / rectTransform.sizeDelta.y);
+        scale = normalize * ((float)Screen.height / (float)rectTransform.sizeDelta.y);
         if (scale > 1f)
         {
             scale = 1f;
@@ -30,6 +30,7 @@ public class VerticalResize : MonoBehaviour
     void OnEnable()
     {
         Events.OnResize += ResizeEvent;
+        Resize();
     }
 
     void OnDisable()
@@ -37,14 +38,17 @@ public class VerticalResize : MonoBehaviour
         Events.OnResize -= ResizeEvent;
     }
 
-    void Start()
+    void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
     }
+
+
 #if UNITY_EDITOR
     void Update()
     {
         Resize();
+        Debug.Log("editor");
     }  
 #endif
 }

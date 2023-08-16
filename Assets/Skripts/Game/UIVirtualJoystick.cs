@@ -14,16 +14,11 @@ public class UIVirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandle
 
     [Header("Settings")]
     public float joystickRange = 50f;
-    public float magnitudeMultiplier = 1f;
-    public Muwer muwer;
 
-    void Start()
-    {
-        muwer = Muwer.regit;
-    }
+
+
     void OnEnable()
     {
-        
         SetupHandle();
     }
 
@@ -61,7 +56,7 @@ public class UIVirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandle
 
     void Update()
     {
-        muwer.muve = new Vector3(handleRect.localPosition.x/joystickRange, 0, handleRect.localPosition.y/joystickRange);
+        Muwer.regit.muve = new Vector3((handleRect.localPosition.x)/joystickRange, 0, (handleRect.localPosition.y)/joystickRange);
     }
 
     private void UpdateHandleRectPosition(Vector2 newPosition)
@@ -80,11 +75,6 @@ public class UIVirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandle
     Vector2 ClampValuesToMagnitude(Vector2 position)
     {
         return Vector2.ClampMagnitude(position, 1);
-    }
-
-    float InvertValue(float value)
-    {
-        return -value;
     }
     
 }

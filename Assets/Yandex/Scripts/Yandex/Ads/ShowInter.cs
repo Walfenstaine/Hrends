@@ -10,6 +10,8 @@ public class ShowInter : MonoBehaviour, IEventReceiver<ShowInterAds>
 {
     public AudioSource sorse;
     public Data data;
+
+    private float scale = 1;
     
     void Start()
     {
@@ -31,6 +33,8 @@ public class ShowInter : MonoBehaviour, IEventReceiver<ShowInterAds>
 
     public void OnEvent(ShowInterAds e)
     {
+
+        scale = 1;
         var ignoreDelay = false;
         Bridge.advertisement.ShowInterstitial(ignoreDelay, success =>
         {
@@ -43,12 +47,17 @@ public class ShowInter : MonoBehaviour, IEventReceiver<ShowInterAds>
         if (state == InterstitialState.Closed)
         {
             sorse.mute = !data.soundOn;
+            SaveAndLoad.Instance.isAds = false;
+            Time.timeScale = scale;
         }
 
 
         if (state == InterstitialState.Opened)
         {
+            scale = Time.timeScale;
+            Time.timeScale = 0;
             sorse.mute = true;
+            SaveAndLoad.Instance.isAds = true;
         }
     }
 }
