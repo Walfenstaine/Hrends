@@ -7,12 +7,11 @@ public class VerticalResize : MonoBehaviour
 {
     private RectTransform rectTransform;
     private float scale = 1;
-    public float normalize = 0.9f;
 
 
     private void Resize()
     {
-        scale = normalize * ((float)Screen.height / (float)rectTransform.sizeDelta.y);
+        scale = (float)Screen.height/700;
         if (scale > 1f)
         {
             scale = 1f;
@@ -48,7 +47,6 @@ public class VerticalResize : MonoBehaviour
     void Update()
     {
         Resize();
-        Debug.Log("editor");
     }  
 #endif
 }
