@@ -1297,6 +1297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGrinch
       objectReference: {fileID: 0}
+    - target: {fileID: 1593447877752128196, guid: 59ee2859bdd075740a043048c273125a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2374602717199179360, guid: 59ee2859bdd075740a043048c273125a, type: 3}
       propertyPath: m_RootOrder
       value: 8

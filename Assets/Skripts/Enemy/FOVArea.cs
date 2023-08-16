@@ -19,7 +19,7 @@ public class FOVArea : MonoBehaviour
     {
         radiansAngleBound = angleBound * Mathf.Deg2Rad;
         meshFilter = GetComponent<MeshFilter>();
-        layerMask = ~LayerMask.GetMask("IgnoreRaycast");
+        layerMask = ~(1<<2);
         StartCoroutine(Check());
     }
 
