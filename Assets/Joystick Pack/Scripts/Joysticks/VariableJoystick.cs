@@ -43,10 +43,7 @@ public class VariableJoystick : Joystick
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        if (Bridge.device.type != InstantGamesBridge.Modules.Device.DeviceType.Desktop)
-        {
-            background.gameObject.SetActive(false);
-        }
+        background.gameObject.SetActive(false);
         base.OnPointerUp(eventData);
     }
 
