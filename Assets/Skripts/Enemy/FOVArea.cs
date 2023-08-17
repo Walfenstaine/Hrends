@@ -50,6 +50,12 @@ public class FOVArea : MonoBehaviour
         return pointsTemp;
     }
 
+    public void Catch()
+    {
+        Interface.rid.skrimer = skrimer;
+        Interface.rid.Gamover();
+    }
+
     Vector3 DoneRayCast(float angleTemp)
     {
         Vector3 rayDirection = new Vector3(Mathf.Sin(angleTemp), 0, Mathf.Cos(angleTemp));
@@ -58,8 +64,7 @@ public class FOVArea : MonoBehaviour
         {
             if (hit.collider.tag == "Player")
             {
-                Interface.rid.skrimer = skrimer;
-                Interface.rid.Gamover();
+                Catch();
             }
             return rayDirection*hit.distance;
         }

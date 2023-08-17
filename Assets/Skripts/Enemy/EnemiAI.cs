@@ -12,6 +12,8 @@ public class EnemiAI : MonoBehaviour {
 
     private float timer = 0;
 
+    public FOVArea fOVArea;
+
 
     void OnEnable()
     {
@@ -27,7 +29,6 @@ public class EnemiAI : MonoBehaviour {
     {
         agent.isStopped = true;
         agent.Warp(WarpPoint());
-        //print("warp");
         agent.isStopped = false;
     }
 
@@ -75,13 +76,17 @@ public class EnemiAI : MonoBehaviour {
                 num = 0;
             }
         }
-        else
-        {
-            //agent.speed = speed;
-            
-        }
         agent.speed = speed;
         agent.destination = target[num].position;
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player")
+        {
+            fOVArea.Catch();
+        }
     }
 
 
