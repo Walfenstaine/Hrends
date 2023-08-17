@@ -5,16 +5,26 @@ using InstantGamesBridge.Modules.Game;
 
 public class VerticalResize : MonoBehaviour
 {
+   
     private RectTransform rectTransform;
     private float scale = 1;
+    private float horScale;
 
 
     private void Resize()
     {
-        scale = (float)Screen.height/700;
-        if (scale > 1f)
+        float aspect = (float)Screen.height/ (float)Screen.width;
+        if (aspect >= 1f)
         {
             scale = 1f;
+        }
+        else
+        {
+            scale = horScale * ((float)Screen.height / 800);
+            if (scale > horScale)
+            {
+                scale = horScale;
+            }
         }
         rectTransform.localScale = new Vector3(scale, scale, scale);
         
@@ -40,6 +50,7 @@ public class VerticalResize : MonoBehaviour
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        horScale = rectTransform.localScale.x;
     }
 
 
@@ -47,6 +58,7 @@ public class VerticalResize : MonoBehaviour
     void Update()
     {
         Resize();
+        Debug.Log("aspect " + (float)Screen.height/ (float)Screen.width);
     }  
 #endif
 }

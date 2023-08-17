@@ -12,7 +12,7 @@ public class VerticalPosition: MonoBehaviour
 
     private void Resize()
     {
-        float aspect = (float)Screen.height / 600;
+        float aspect = (float)Screen.height / 800;
         if (aspect > 1)
         {
             aspect = 1;
@@ -47,7 +47,6 @@ public class VerticalPosition: MonoBehaviour
     void Update()
     {
         Resize();
-        Debug.Log("editor");
     }  
 #endif
 }

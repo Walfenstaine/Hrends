@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class InputPK : MonoBehaviour
 {
-    private Muwer muwer;
+    public VariableJoystick variableJoystick;
 
-    private void Start()
-    {
-        muwer = Muwer.regit;
-    }
+
     void Update()
     {
-        if (muwer != null)
-        {
-            muwer.muve = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        }
+       Muwer.regit.muve = new Vector3(Mathf.Clamp(Input.GetAxis("Horizontal") + variableJoystick.Horizontal,-1,1), 0, Mathf.Clamp(Input.GetAxis("Vertical") + variableJoystick.Vertical,-1,1));
     }
 }
