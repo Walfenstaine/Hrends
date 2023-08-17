@@ -25,14 +25,7 @@ public class Interface : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        if(!SaveAndLoad.Instance.isFirstLoad)
-        {
-            SaveAndLoad.Instance.isFirstLoad = true;
-            Game();
-        }
-    }
+
 
 
 

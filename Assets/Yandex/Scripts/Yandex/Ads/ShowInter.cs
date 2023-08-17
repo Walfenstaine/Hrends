@@ -18,10 +18,14 @@ public class ShowInter : MonoBehaviour, IEventReceiver<ShowInterAds>
         Bridge.advertisement.interstitialStateChanged += Interstitial;
         EventBus.Register(this);
 
-        EventBus<ShowInterAds>.Raise(new ShowInterAds()
+        if (SaveAndLoad.Instance.isFirstLoad)
         {
+            EventBus<ShowInterAds>.Raise(new ShowInterAds()
+            {
 
-        });
+            });
+            SaveAndLoad.Instance.isFirstLoad = false;
+        }
     }
 
     void OnDestroy()
