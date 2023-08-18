@@ -26,6 +26,8 @@ public class SaveAndLoad : MonoBehaviour
 
     private float time, record;
 
+    public int count = 0;
+
 
     public void Load()
     {
@@ -116,6 +118,11 @@ public class SaveAndLoad : MonoBehaviour
             yield return new WaitForSecondsRealtime(80f);
             if (!isAds) {
                 Events.OnShow?.Invoke();
+            }
+            count++;
+            if (count == 4)
+            {
+                Events.OnGameButtonAppear?.Invoke();
             }
         }
     }
