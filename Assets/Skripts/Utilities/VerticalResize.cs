@@ -12,6 +12,7 @@ public class VerticalResize : MonoBehaviour
     private RectTransform rectTransform;
     private float scale = 1;
     private float horScale;
+    private bool firstResize = true;
 
 
     private void Resize()
@@ -38,14 +39,25 @@ public class VerticalResize : MonoBehaviour
     private void ResizeEvent()
     {
         Resize();
+        Invoke("Resize", 0.2f);
         Invoke("Resize", 0.4f);
     }
 
     void OnEnable()
     {
         Events.OnResize += ResizeEvent;
-        Resize();
+        if (!firstResize) 
+        {
+            Resize();
+        }
     }
+
+    void Start()
+    {
+        Resize();
+        firstResize = false;
+    }
+
 
     void OnDisable()
     {

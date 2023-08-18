@@ -13,8 +13,7 @@ public class Subtitres : MonoBehaviour
     public static Subtitres regit { get; set; }
 
     void Awake()
-    {
-        OffTitres();
+    {        
         if (regit == null)
         {
             regit = this;
@@ -23,6 +22,7 @@ public class Subtitres : MonoBehaviour
         {
             Destroy(this);
         }
+        OffTitres();
     }
     void OnDestroy()
     {
