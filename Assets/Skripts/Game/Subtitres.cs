@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Subtitres : MonoBehaviour
 {
     public float interval = 3.0f;
-    public Image fon;
-    public Text titres;
+    public Image fon, fon1;
+    public Text titres, titres1;
     public string subtitres { get; set; }
     public float timer { get; set; }
     public static Subtitres regit { get; set; }
@@ -32,12 +32,16 @@ public class Subtitres : MonoBehaviour
     {
         titres.text = subtitres;
         fon.enabled = true;
+        titres1.text = subtitres;
+        fon1.enabled = true;
     }
     void OffTitres()
     {
         subtitres = "";
         titres.text = subtitres;
         fon.enabled = false;
+        titres1.text = subtitres;
+        fon1.enabled = false;
     }
     void Update()
     {
