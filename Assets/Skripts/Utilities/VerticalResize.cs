@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using InstantGamesBridge.Modules.Game;
 
 public class VerticalResize : MonoBehaviour
 {
-   
+
+    public UnityEvent OnHor, OnVert;
+    
     private RectTransform rectTransform;
     private float scale = 1;
     private float horScale;
@@ -17,14 +20,16 @@ public class VerticalResize : MonoBehaviour
         if (aspect >= 1f)
         {
             scale = 1f;
+            OnVert.Invoke();
         }
         else
         {
             scale = horScale * ((float)Screen.height / 800);
             if (scale > horScale)
             {
-                scale = horScale;
+                scale = horScale;                
             }
+            OnHor.Invoke();
         }
         rectTransform.localScale = new Vector3(scale, scale, scale);
         
