@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
-  <en>k__BackingField: Start
-  <ru>k__BackingField: "\u0421\u0442\u0430\u0440\u0442"
+  <en>k__BackingField: Start.
+  <ru>k__BackingField: "\u0421\u0442\u0430\u0440\u0442."

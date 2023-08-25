@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: Restart
   m_EditorClassIdentifier: 
-  <en>k__BackingField: Start over
-  <ru>k__BackingField: "\u041D\u0430\u0447\u0430\u0442\u044C \u0441\u043D\u0430\u0447\u0430\u043B\u0430"
+  <en>k__BackingField: Restart.
+  <ru>k__BackingField: "\u041D\u0430\u0447\u0430\u0442\u044C \u0441\u043D\u0430\u0447\u0430\u043B\u0430."

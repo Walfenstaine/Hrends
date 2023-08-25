@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: Level
   m_EditorClassIdentifier: 
-  <en>k__BackingField: Level Select
-  <ru>k__BackingField: "\u0412\u044B\u0431\u043E\u0440 \u0443\u0440\u043E\u0432\u043D\u044F"
+  <en>k__BackingField: Level Select.
+  <ru>k__BackingField: "\u0412\u044B\u0431\u043E\u0440 \u0443\u0440\u043E\u0432\u043D\u044F."

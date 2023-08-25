@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: Other games 1
   m_EditorClassIdentifier: 
-  <en>k__BackingField: I want other games
+  <en>k__BackingField: I want other games!
   <ru>k__BackingField: "\u0425\u043E\u0447\u0443 \u0434\u0440\u0443\u0433\u0438\u0435
-    \u0438\u0433\u0440\u044B"
+    \u0438\u0433\u0440\u044B!"

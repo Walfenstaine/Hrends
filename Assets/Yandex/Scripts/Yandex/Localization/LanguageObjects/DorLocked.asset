@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: DorLocked
   m_EditorClassIdentifier: 
-  <en>k__BackingField: The door is locked
-  <ru>k__BackingField: "\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430"
+  <en>k__BackingField: The door is locked.
+  <ru>k__BackingField: "\u0414\u0432\u0435\u0440\u044C \u0437\u0430\u043F\u0435\u0440\u0442\u0430."

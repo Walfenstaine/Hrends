@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: Other games
   m_EditorClassIdentifier: 
-  <en>k__BackingField: Other games
-  <ru>k__BackingField: "\u0414\u0440\u0443\u0433\u0438\u0435 \u0438\u0433\u0440\u044B"
+  <en>k__BackingField: Other games!
+  <ru>k__BackingField: "\u0414\u0440\u0443\u0433\u0438\u0435 \u0438\u0433\u0440\u044B!"

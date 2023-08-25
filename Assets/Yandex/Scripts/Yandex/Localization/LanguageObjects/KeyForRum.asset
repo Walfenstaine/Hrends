@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: KeyForRum
   m_EditorClassIdentifier: 
-  <en>k__BackingField: Room key
-  <ru>k__BackingField: "\u041A\u043B\u044E\u0447 \u043E\u0442 \u043A\u043E\u043C\u043D\u0430\u0442\u044B"
+  <en>k__BackingField: Room key.
+  <ru>k__BackingField: "\u041A\u043B\u044E\u0447 \u043E\u0442 \u043A\u043E\u043C\u043D\u0430\u0442\u044B."

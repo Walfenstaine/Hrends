@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2159556883534c42b8c9420514b57c5, type: 3}
   m_Name: AdsWillStart
   m_EditorClassIdentifier: 
-  <en>k__BackingField: The advertisement will start in:.
+  <en>k__BackingField: 'The advertisement will start in:'
   <ru>k__BackingField: "\u0420\u0435\u043A\u043B\u0430\u043C\u0430 \u043D\u0430\u0447\u043D\u0435\u0442\u0441\u044F
     \u0447\u0435\u0440\u0435\u0437:"
