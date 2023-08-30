@@ -18,7 +18,7 @@ public class VerticalResize : MonoBehaviour
     private void Resize()
     {
         float aspect = (float)Screen.height/ (float)Screen.width;
-        if (aspect >= 1f)
+        if (aspect >= 1.345f)
         {
             scale = 1f;
             OnVert.Invoke();
