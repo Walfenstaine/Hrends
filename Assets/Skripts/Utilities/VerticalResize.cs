@@ -25,7 +25,7 @@ public class VerticalResize : MonoBehaviour
         }
         else
         {
-            scale = horScale * ((float)Screen.height / 800);
+            scale = 16 * aspect / 9;
             if (scale > horScale)
             {
                 scale = horScale;                
@@ -75,7 +75,6 @@ public class VerticalResize : MonoBehaviour
     void Update()
     {
         Resize();
-        Debug.Log("aspect " + (float)Screen.height/ (float)Screen.width);
     }  
 #endif
 }
