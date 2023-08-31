@@ -7,12 +7,21 @@ public class EnemiAI : MonoBehaviour {
 	public float speed, stopDist;
 	public Animator anim;
 	public Transform[] target;
-    private int num;
+    public int num;
 	public NavMeshAgent agent;
 
     private float timer = 0;
 
     public FOVArea fOVArea;
+
+    private bool isForward = true;
+
+    void Start()
+    {
+        agent.speed = speed;
+        num = 0;
+        NextPoint();
+    }
 
 
     void OnEnable()
@@ -30,6 +39,7 @@ public class EnemiAI : MonoBehaviour {
         agent.isStopped = true;
         agent.Warp(WarpPoint());
         agent.isStopped = false;
+        NextPoint();
     }
 
 
@@ -42,6 +52,7 @@ public class EnemiAI : MonoBehaviour {
             if (delta < (target[i].position - Muwer.regit.myTransform.position).sqrMagnitude)
             {
                 warpPoinTemp = target[i].position;
+                num = i;
             }
         }
         return warpPoinTemp;
@@ -65,18 +76,35 @@ public class EnemiAI : MonoBehaviour {
             anim.SetBool("Run", true);
             agent.isStopped = false;
         }
+
+
         if (Vector3.Distance(target[num].position, transform.position) <= stopDist)
         {
-            if (num < target.Length-1)
-            {
-                num += 1;
-                timer = Random.Range(0.7f, 3.0f);
-            }
-            else {
-                num = 0;
-            }
+            NextPoint();
+            timer = Random.Range(0.7f, 3.0f);
+        }      
+    }
+
+    void NextPoint()
+    {
+        if (num == target.Length - 1)
+        {
+            isForward = false;
+
         }
-        agent.speed = speed;
+        if(num == 0)
+        {
+            isForward = true;
+        }
+
+        if (isForward)
+        {
+            num++;
+        }
+        else
+        {
+            num--;
+        }
         agent.destination = target[num].position;
     }
 
