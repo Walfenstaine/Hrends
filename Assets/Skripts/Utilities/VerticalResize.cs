@@ -9,31 +9,19 @@ public class VerticalResize : MonoBehaviour
 
     public UnityEvent OnHor, OnVert;
     
-    private RectTransform rectTransform;
-    private float scale = 1;
-    private float horScale;
-    private bool firstResize = true;
 
 
     private void Resize()
     {
         float aspect = (float)Screen.height/ (float)Screen.width;
-        if (aspect >= 1.345f)
+        if (aspect >= 1.3f)
         {
-            scale = 1f;
             OnVert.Invoke();
         }
         else
         {
-            scale = 16 * aspect / 9;
-            if (scale > horScale)
-            {
-                scale = horScale;                
-            }
             OnHor.Invoke();
-        }
-        rectTransform.localScale = new Vector3(scale, scale, scale);
-        
+        }        
     }
 
     private void ResizeEvent()
@@ -46,17 +34,9 @@ public class VerticalResize : MonoBehaviour
     void OnEnable()
     {
         Events.OnResize += ResizeEvent;
-        if (!firstResize) 
-        {
-            Resize();
-        }
+        Resize();
     }
 
-    void Start()
-    {
-        Resize();
-        firstResize = false;
-    }
 
 
     void OnDisable()
@@ -64,11 +44,7 @@ public class VerticalResize : MonoBehaviour
         Events.OnResize -= ResizeEvent;
     }
 
-    void Awake()
-    {
-        rectTransform = GetComponent<RectTransform>();
-        horScale = rectTransform.localScale.x;
-    }
+
 
 
 #if UNITY_EDITOR
