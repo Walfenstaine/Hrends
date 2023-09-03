@@ -59,8 +59,10 @@ public class SoundButton : MonoBehaviour
     void Hide()
     {
             sourseState = data.soundOn;
-            SetSprite(false);
-            sorse.mute = true;
+            data.soundOn = false;
+            SetSprite(data.soundOn);
+            sorse.mute = !data.soundOn;
+
     }
 
     void UnHide()
