@@ -11,8 +11,11 @@ public class SoundButton : MonoBehaviour
     public Button butt;
     public Image im;
 
+    bool sourseState;
+
     private void Awake()
     {
+       sourseState = data.soundOn;
        sorse.mute = !data.soundOn;
        SetSprite(data.soundOn);
     }
@@ -44,5 +47,23 @@ public class SoundButton : MonoBehaviour
         data.soundOn = !data.soundOn;
         SetSprite(data.soundOn);
         sorse.mute = !data.soundOn;
+    }
+
+
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            data.soundOn = sourseState;
+            SetSprite(data.soundOn);
+            sorse.mute = !data.soundOn;
+        }
+        else
+        {
+            sourseState = data.soundOn;
+            SetSprite(false);
+            sorse.mute = true;
+        }
     }
 }

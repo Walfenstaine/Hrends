@@ -94,4 +94,13 @@ public class Interface : MonoBehaviour
         lvl.SetActive(false);
     }
 
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus)
+        {
+            Menue();
+        }
+    }
+
 }
