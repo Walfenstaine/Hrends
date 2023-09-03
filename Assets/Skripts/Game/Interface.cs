@@ -103,4 +103,19 @@ public class Interface : MonoBehaviour
         }
     }
 
+    void Hide()
+    {
+        Menue();
+    }
+
+    void OnEnable()
+    {
+        Events.OnHide += Hide;
+    }
+
+    void OnDisable()
+    {
+        Events.OnHide -= Hide;
+    }
+
 }

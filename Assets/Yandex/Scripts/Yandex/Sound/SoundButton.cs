@@ -35,11 +35,15 @@ public class SoundButton : MonoBehaviour
     private void OnEnable()
     {
         butt.onClick.AddListener(Change);
+        Events.OnUnHide += UnHide;
+        Events.OnHide += Hide;
     }
 
     private void OnDisable()
     {
         butt.onClick.RemoveListener(Change);
+        Events.OnUnHide -= UnHide;
+        Events.OnHide -= Hide;
     }
 
     private void Change()
@@ -51,19 +55,18 @@ public class SoundButton : MonoBehaviour
 
 
 
-    void OnApplicationFocus(bool hasFocus)
+
+    void Hide()
     {
-        if (hasFocus)
-        {
-            data.soundOn = sourseState;
-            SetSprite(data.soundOn);
-            sorse.mute = !data.soundOn;
-        }
-        else
-        {
             sourseState = data.soundOn;
             SetSprite(false);
             sorse.mute = true;
-        }
+    }
+
+    void UnHide()
+    {
+        data.soundOn = sourseState;
+        SetSprite(data.soundOn);
+        sorse.mute = !data.soundOn;
     }
 }

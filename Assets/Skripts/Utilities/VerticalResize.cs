@@ -34,6 +34,7 @@ public class VerticalResize : MonoBehaviour
     void OnEnable()
     {
         Events.OnResize += ResizeEvent;
+        Events.OnUnHide += UnHide;
         Resize();
     }
 
@@ -42,6 +43,17 @@ public class VerticalResize : MonoBehaviour
     void OnDisable()
     {
         Events.OnResize -= ResizeEvent;
+        Events.OnUnHide -= UnHide;
+    }
+
+    void OnApplicationFocus(bool hasFocus)
+    {
+        Resize();
+    }
+
+    void UnHide()
+    {
+        Resize();
     }
 
 

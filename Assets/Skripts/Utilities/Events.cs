@@ -5,5 +5,5 @@ using UnityEngine;
 public class Events 
 {
     public static System.Action OnDie, OnShow;
-    public static System.Action OnResize, OnGameButtonAppear;
+    public static System.Action OnResize, OnGameButtonAppear, OnHide, OnUnHide;
 }

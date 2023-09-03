@@ -580,6 +580,24 @@
                 }
             }, true);
 
+
+            window.addEventListener('resize', function (event) {
+                if (window.unityInstance !== null) {
+                    window.unityInstance.SendMessage('Bridge', 'ResizeFunction')
+                }
+            }, true);
+
+            window.addEventListener("visibilitychange", function () {
+                if (document.hidden)
+                {
+                    window.unityInstance.SendMessage('Bridge', 'HideFunction')
+                }
+                else
+                {
+                        window.unityInstance.SendMessage('Bridge', 'UnHideFunction')
+                }
+            });
+
         </script>
     </body>
 </html>

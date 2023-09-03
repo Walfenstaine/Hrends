@@ -42,6 +42,17 @@ namespace InstantGamesBridge.Modules.Game
             }
         }
 
+        private void HideFunction()
+        {
+            Events.OnHide?.Invoke();
+        }
+
+        private void UnHideFunction()
+        {
+            Events.OnUnHide?.Invoke();
+        }
+
+
         private void ResizeFunction()
         {
             Events.OnResize?.Invoke();
