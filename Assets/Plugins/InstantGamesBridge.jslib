@@ -317,6 +317,18 @@ mergeInto(LibraryManager.library, {
 
     InstantGamesBridgeLeaderboardShowNativePopup: function(options) {
         window.leaderboardShowNativePopup(UTF8ToString(options))
+    },
+
+    InstantGamesBridgeStartSound: function() {
+        window.startSounds();
+    },
+
+    InstantGamesBridgeMuteSound: function() {
+        window.MuteSounds();
+    },
+
+    InstantGamesBridgeUnMuteSound: function() {
+             window.UnMuteSounds();
     }
 
 });

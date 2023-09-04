@@ -3,8 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+#if !UNITY_EDITOR
+ using System;
+ using System.Runtime.InteropServices;
+#endif
+
 public class Interface : MonoBehaviour
 {
+
+    #if !UNITY_EDITOR
+    [DllImport("__Internal")]
+    private static extern string InstantGamesBridgeStartSound();
+    #endif
+
     public AudioClip skrim, winer;
     public Data data;
     [HideInInspector] public Sprite skrimer;
@@ -67,6 +78,9 @@ public class Interface : MonoBehaviour
         game.SetActive(true);
         andLevel.SetActive(false);
         lvl.SetActive(false);
+        #if !UNITY_EDITOR
+        InstantGamesBridgeStartSound();
+        #endif
     }
     public void LvlSelect()
     {

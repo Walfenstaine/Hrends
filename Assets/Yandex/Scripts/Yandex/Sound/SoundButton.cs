@@ -2,9 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+#if !UNITY_EDITOR
+using System;
+using System.Runtime.InteropServices;
+#endif
 
 public class SoundButton : MonoBehaviour
 {
+
+    #if !UNITY_EDITOR
+    [DllImport("__Internal")]
+    private static extern string InstantGamesBridgeMuteSound();
+    [DllImport("__Internal")]
+    private static extern string InstantGamesBridgeUnMuteSound();
+    #endif
+
+
     public Sprite soundIsOn, soundIsOff;
     public Data data;
     public AudioSource sorse;
@@ -35,15 +48,11 @@ public class SoundButton : MonoBehaviour
     private void OnEnable()
     {
         butt.onClick.AddListener(Change);
-        Events.OnUnHide += UnHide;
-        Events.OnHide += Hide;
     }
 
     private void OnDisable()
     {
         butt.onClick.RemoveListener(Change);
-        Events.OnUnHide -= UnHide;
-        Events.OnHide -= Hide;
     }
 
     private void Change()
@@ -51,29 +60,16 @@ public class SoundButton : MonoBehaviour
         data.soundOn = !data.soundOn;
         SetSprite(data.soundOn);
         sorse.mute = !data.soundOn;
-    }
 
-
-
-
-    void Hide()
-    {
-            sourseState = data.soundOn;
-            data.soundOn = false;
-            SetSprite(data.soundOn);
-            sorse.mute = !data.soundOn;
-
-    }
-
-    void UnHide()
-    {
-        data.soundOn = sourseState;
-        SetSprite(data.soundOn);
-        sorse.mute = !data.soundOn;
-    }
-
-    void OnApplicationPause(bool isPaused)
-    {
-        Debug.Log("pause");
+        #if !UNITY_EDITOR
+        if (!data.soundOn)
+        {
+            InstantGamesBridgeMuteSound();
+        }
+        else
+        {
+            InstantGamesBridgeUnMuteSound();
+        }                      
+        #endif
     }
 }

@@ -2864,6 +2864,7 @@ MonoBehaviour:
   winer: {fileID: 8300000, guid: 856fe208a05e8ef4581beda92379b65c, type: 3}
   data: {fileID: 11400000, guid: 2d24e1bdce643a543a1915e38c2dd049, type: 2}
   skrimer: {fileID: 0}
+  gameState: 0
   gamover: {fileID: 4744469709091706754}
   andLevel: {fileID: 488487185805447954}
   game: {fileID: 291128679283848715}
@@ -2891,11 +2892,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3827d8546497715408170f84e2a65186, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

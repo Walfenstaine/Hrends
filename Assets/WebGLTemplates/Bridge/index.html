@@ -67,6 +67,7 @@
             <div id="progress-bar"><div id="progress-bar-fill"></div></div>
         </div>
         <script src="./instant-games-bridge.js"></script>
+        <script src="./howler.core.min.js"></script>
         <script>
             if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
                 let meta = document.createElement('meta')
@@ -82,14 +83,15 @@
             const STORAGE_DATA_SEPARATOR = '{bridge_data_separator}'
             const STORAGE_KEYS_SEPARATOR = '{bridge_keys_separator}'
             const STORAGE_VALUES_SEPARATOR = '{bridge_values_separator}'
-            
-            
+
+
             // utils
             window.unityInstance = null
             let progressBarFillingInterval = null
 
             function sendMessageToUnity(name, value) {
-                if (window.unityInstance !== null) {
+                if (window.unityInstance !== null)
+                {
                     window.unityInstance.SendMessage('Bridge', name, value)
                 }
             }
@@ -106,7 +108,7 @@
                     progressBarFillingInterval = null
                 }
             }
-            
+
             function completeProgressBarFilling() {
                 if (progressBarFillingInterval !== null) {
                     return
@@ -135,13 +137,44 @@
                 canvas.focus()
             })
 
+            let isHidden = false;
+            let isAds = false;
+            let soundMute = false;
+            let isFirstLoad = true;
+
+            function SetMuteSoundState() {
+                Howler.mute(isHidden || isAds || soundMute);
+            }
+
 
             // initialization
             bridge
                 .initialize()
                 .then(() => {
-                    bridge.advertisement.on('interstitial_state_changed', state => sendMessageToUnity('OnInterstitialStateChanged', state))
-                    bridge.advertisement.on('rewarded_state_changed', state => sendMessageToUnity('OnRewardedStateChanged', state))
+                    bridge.advertisement.on('interstitial_state_changed', state => {
+                        if (state == 'opened')
+                        {
+                            isAds = true;
+                            SetMuteSoundState();
+                        }
+                        if (state == 'closed')
+                        {
+                            isAds = false;
+                            SetMuteSoundState();
+                        }
+                        sendMessageToUnity('OnInterstitialStateChanged', state);
+                    })
+                    bridge.advertisement.on('rewarded_state_changed', state => {
+                        if (state == 'opened') {
+                            isAds = true;
+                            SetMuteSoundState();
+                        }
+                        if (state == 'closed') {
+                            isAds = false;
+                            SetMuteSoundState();
+                        }
+                        sendMessageToUnity('OnRewardedStateChanged', state);
+                    })
                     bridge.game.on('visibility_state_changed', state => sendMessageToUnity('OnVisibilityStateChanged', state))
 
                     let unityLoader = document.createElement('script')
@@ -179,9 +212,12 @@
                     document.body.appendChild(unityLoader)
                 })
                 .catch(error => console.error(error))
-            
+
 
             // platform
+
+
+
             window.getPlatformId = function() {
                 return bridge.platform.id
             }
@@ -343,7 +379,7 @@
             window.getIsBannerShowing = function() {
                 return bridge.advertisement.isBannerShowing.toString()
             }
-            
+
             window.getMinimumDelayBetweenInterstitial = function() {
                 return bridge.advertisement.minimumDelayBetweenInterstitial.toString()
             }
@@ -587,17 +623,47 @@
                 }
             }, true);
 
+
             window.addEventListener("visibilitychange", function () {
                 if (document.hidden)
                 {
+                    isHidden = true;
+                    SetMuteSoundState();               
                     window.unityInstance.SendMessage('Bridge', 'HideFunction');
                 }
                 else
                 {
+                    isHidden = false;
+                    SetMuteSoundState();
                     window.unityInstance.SendMessage('Bridge', 'UnHideFunction');
                 }
             });
 
+            window.startSounds = function () {
+                if (isFirstLoad)
+                {
+                    isFirstLoad = false;
+                    setTimeout(() => {
+                        let sound = new Howl({
+                            src: ['./back.mp3'],
+                            html5: false,
+                            loop: true,
+                            volume: 0.38
+                        });
+                        sound.play();
+                    }, 800);
+                }
+            }
+
+            window.UnMuteSounds = function () {
+                soundMute = false;
+                SetMuteSoundState();
+            }
+
+            window.MuteSounds = function () {
+                soundMute = true;
+                SetMuteSoundState();
+            }
         </script>
     </body>
 </html>
