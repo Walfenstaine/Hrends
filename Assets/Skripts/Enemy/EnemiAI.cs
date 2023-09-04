@@ -82,7 +82,7 @@ public class EnemiAI : MonoBehaviour {
         {
             NextPoint();
             timer = Random.Range(0.7f, 3.0f);
-        }      
+        }
     }
 
     void NextPoint()

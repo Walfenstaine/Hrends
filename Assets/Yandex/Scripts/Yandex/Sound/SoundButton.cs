@@ -71,4 +71,9 @@ public class SoundButton : MonoBehaviour
         SetSprite(data.soundOn);
         sorse.mute = !data.soundOn;
     }
+
+    void OnApplicationPause(bool isPaused)
+    {
+        Debug.Log("pause");
+    }
 }

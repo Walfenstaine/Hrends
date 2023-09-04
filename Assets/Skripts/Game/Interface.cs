@@ -7,8 +7,10 @@ public class Interface : MonoBehaviour
 {
     public AudioClip skrim, winer;
     public Data data;
-    // public Text coins;
-   [HideInInspector] public Sprite skrimer;
+    [HideInInspector] public Sprite skrimer;
+
+    public enum GameState {menu,die,game, lvlSelect, win};
+    public GameState gameState = GameState.menu;
 
     public GameObject gamover,andLevel, game, menue, lvl;
     public static Interface rid { get; set; }
@@ -37,11 +39,13 @@ public class Interface : MonoBehaviour
 
     public void Rspune()
     {
-        Events.OnDie?.Invoke();
         Game();
     }
+
     public void Gamover()
     {
+        gameState = GameState.die;
+        Events.OnDie?.Invoke();
         if (Time.timeScale > 0)
         {
             SoundPlayer.regit.sorse.PlayOneShot(skrim);
@@ -56,6 +60,7 @@ public class Interface : MonoBehaviour
 
     public void Game()
     {
+        gameState = GameState.game;
         Time.timeScale = 1;
         menue.SetActive(false);
         gamover.SetActive(false);
@@ -65,6 +70,7 @@ public class Interface : MonoBehaviour
     }
     public void LvlSelect()
     {
+        gameState = GameState.lvlSelect;
         Time.timeScale = 0;
         menue.SetActive(false);
         gamover.SetActive(false);
@@ -74,6 +80,7 @@ public class Interface : MonoBehaviour
     }
     public void Menue()
     {
+        gameState = GameState.menu;
         Time.timeScale = 0;
         menue.SetActive(true);
         gamover.SetActive(false);
@@ -83,6 +90,7 @@ public class Interface : MonoBehaviour
     }
     public void AndLevel()
     {
+        gameState = GameState.win;
         if (Time.timeScale > 0)
         {
             SoundPlayer.regit.sorse.PlayOneShot(winer);
@@ -99,13 +107,13 @@ public class Interface : MonoBehaviour
     {
         if (!hasFocus)
         {
-            Menue();
+            SetPauseState();
         }
     }
 
     void Hide()
     {
-        Menue();
+        SetPauseState();
     }
 
     void OnEnable()
@@ -116,6 +124,14 @@ public class Interface : MonoBehaviour
     void OnDisable()
     {
         Events.OnHide -= Hide;
+    }
+
+    void SetPauseState()
+    {
+        if (gameState == GameState.game)
+        {
+            Menue();
+        }
     }
 
 }

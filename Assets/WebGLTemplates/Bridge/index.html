@@ -590,11 +590,11 @@
             window.addEventListener("visibilitychange", function () {
                 if (document.hidden)
                 {
-                    window.unityInstance.SendMessage('Bridge', 'HideFunction')
+                    window.unityInstance.SendMessage('Bridge', 'HideFunction');
                 }
                 else
                 {
-                        window.unityInstance.SendMessage('Bridge', 'UnHideFunction')
+                    window.unityInstance.SendMessage('Bridge', 'UnHideFunction');
                 }
             });
 
